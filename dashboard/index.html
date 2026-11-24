@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Launch Radar</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+<div class="wrap">
+<p class="kicker">MAKE.FUN — TOKEN LAUNCH RADAR · 14 NOV 2026 · 758 PROTOCOLS</p>
+<h1>Token Launch Radar</h1>
+<p class="sub">What a protocol's token would be worth if its record stayed as it is — and how to farm it before it launches. 198 pre-token protocols, ranked.</p>
+</div>
+</header>
+<main class="wrap">
+<section id="kpis" class="kpis"></section>
+<section id="judge-note" class="box note"></section>
+<section class="grid12">
+<div id="tiles" class="tiles"></div>
+<div id="flagbox" class="box flagbox"></div>
+</section>
+<section id="narrative" class="box narrative"></section>
+<nav class="tabs">
+<button class="tab on" data-tab="board">Board</button>
+<button class="tab" data-tab="evidence">Evidence</button>
+<button class="tab" data-tab="calendar">Calendar</button>
+</nav>
+<section id="panel-board" class="panel on">
+<div class="controls">
+<input id="q" type="search" placeholder="Search name or category…" aria-label="Search">
+<select id="f-verdict" aria-label="Verdict filter"><option value="">All verdicts</option><option>FARM</option><option>MARGINAL</option><option>SKIP</option></select>
+<select id="f-tier" aria-label="Odds tier filter"><option value="">All tiers</option><option>HIGH</option><option>MED</option><option>LOW</option></select>
+<select id="f-flag" aria-label="Flag filter"><option value="">All flags</option><option value="bear">Bear-proof core</option><option value="fragile">Fragile FARM</option><option value="down">Downside &gt; upside</option><option value="grey">Not on sealed watchlist</option><option value="narrow">Outside traded range</option></select>
+<button id="density">Density: compact</button>
+<button id="chooser-btn">Columns…</button>
+<button id="show-all">Show all 198</button>
+<button id="export-json">Export JSON</button>
+<button id="export-csv">Export CSV</button>
+</div>
+<div id="chooser" class="chooser" hidden></div>
+<div id="sim" class="box sim"></div>
+<div class="tablewrap"><table id="board">
+<thead id="thead"></thead>
+<tbody id="tbody"></tbody>
+<tfoot id="tfoot"></tfoot>
+</table></div>
+<p id="count" class="count"></p>
+</section>
+<section id="panel-evidence" class="panel">
+<div id="odds-panel" class="box odds"></div>
+<div id="evidence" class="evidence"></div>
+</section>
+<section id="panel-calendar" class="panel">
+<div id="calendar" class="calendar"></div>
+</section>
+<section id="detail" class="box detail"></section>
+</main>
+<footer class="wrap foot">
+<p>Model A (ridge lam 30) on the sealed 14 Nov 2026 snapshot. Implied value = TVL × fitted multiple, capped at p90 (2.87×). Odds = 50% logit + 30% empirical + 20% base rate. Verdicts at $5,000 / 12 weeks / 7%; FARM if net &gt; +$25, SKIP if &lt; −$25. The watchlist is a floor, never a ceiling.</p>
+</footer>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
